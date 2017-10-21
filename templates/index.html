@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Python Flask random GIFS app</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+<title> {% block title %}{% endblock %}</title>
+ </head>
+
+
+    {% if session.user_id %}
+
+    <body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="#">Home</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="profile"> Profile</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Python Flask App</h3>
+        </div>
+    </div>
+
+ {% else %}
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="{{ url_for('main') }}">Home</a>
+                    </li>
+                    <li role="presentation"><a href="signin">Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="signup">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Python Flask App</h3>
+        </div>
+
+
+{% endif %}
+            <main>
+                {% block main %}{% endblock %}
+            </main>
+
+        <footer class="footer">
+            <p>YO WADDUP ESLAM IS HERE</p>
+        </footer>
+    </div>
+
+    </body>
+</html>
